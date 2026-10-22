@@ -1,0 +1,249 @@
+/* Variablen */
+:root {
+    --farbe-text: #222;
+    --farbe-grau: #666;
+    --farbe-hintergrund: #fff;
+    --farbe-linie: #e5e5e5;
+    --farbe-akzent: #1f5f8b;
+    --breite-max: 900px;
+}
+
+/* Grundeinstellungen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+    color: var(--farbe-text);
+    background: var(--farbe-hintergrund);
+    line-height: 1.6;
+}
+
+/* Header mit Flexbox */
+header {
+    position: sticky;
+    top: 0;
+    background: var(--farbe-hintergrund);
+    border-bottom: 1px solid var(--farbe-linie);
+    z-index: 10;
+}
+
+nav {
+    max-width: var(--breite-max);
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--farbe-text);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--farbe-akzent);
+}
+
+.logo {
+    font-weight: 700;
+}
+
+/* Abschnitte und Startbereich */
+section {
+    max-width: var(--breite-max);
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    border-bottom: 1px solid var(--farbe-linie);
+    scroll-margin-top: 4rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: var(--farbe-akzent);
+    margin-bottom: 1rem;
+}
+
+#start {
+    text-align: center;
+}
+
+#start img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+#start h1 {
+    font-size: 2.5rem;
+}
+
+#start p {
+    color: var(--farbe-grau);
+    font-size: 1.25rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--farbe-grau);
+    font-size: 0.9rem;
+}
+
+/* Karten mit Grid */
+.karten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.karte {
+    border: 1px solid var(--farbe-linie);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.karte h3 {
+    font-size: 1.2rem;
+}
+
+.karte ul {
+    padding-left: 1.2rem;
+}
+
+.zeitraum {
+    color: var(--farbe-grau);
+    font-size: 0.9rem;
+}
+
+.firma {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    background: var(--farbe-akzent);
+    color: #fff;
+}
+
+.status.laufend {
+    background: var(--farbe-linie);
+    color: var(--farbe-text);
+}
+
+/* Skills als Etiketten */
+.skill-gruppe {
+    margin-bottom: 1.5rem;
+}
+
+.skill-gruppe h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.skills li {
+    border: 1px solid var(--farbe-akzent);
+    color: var(--farbe-akzent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+/* Projekte & Galerie */
+.projekt {
+    margin-bottom: 2.5rem;
+}
+
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.galerie img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+figcaption {
+    text-align: center;
+    color: var(--farbe-grau);
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+}
+
+/* Kontakt */
+.kontakt-liste {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.kontakt-liste a {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--farbe-akzent);
+    border-radius: 8px;
+    color: var(--farbe-akzent);
+    text-decoration: none;
+}
+
+.kontakt-liste a:hover {
+    background: var(--farbe-akzent);
+    color: #fff;
+}
+
+/* Handy-Ansicht */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #start h1 {
+        font-size: 2rem;
+    }
+}
+
+
